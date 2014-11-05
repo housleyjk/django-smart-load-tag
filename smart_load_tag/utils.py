@@ -37,7 +37,7 @@ def load(parser, lib, tag='*', name=None, namespace=None, app=None):
                 lib.tags['%s.%s' % (namespace, tag)] = lib.tags[tag]
                 del lib.tags[tag]
         parser.add_library(lib)
-    except InvalidTemplateLibrary, e:
+    except InvalidTemplateLibrary as e:
         raise TemplateSyntaxError("'%s' is not a valid tag library: %s" % (lib, e))
 
 def get_library(library_name, app_name=None):
